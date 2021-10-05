@@ -1,7 +1,8 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import axios from "axios";
 import {API_PATH} from "../../Constants";
 import {IProject, IUser} from "../../Interfaces";
+import {ProjectsContext} from "../Provider/projectsProvider";
 
 const Tracker = () => {
 
@@ -13,7 +14,8 @@ const Tracker = () => {
     }
 
 
-    const [projects, setProjects] = useState<IProject[]>([]);
+    const context = useContext(ProjectsContext);
+
     const [users, setUsers] = useState<IUser[]>();
     const [user, setUser] = useState('');
 
@@ -38,8 +40,7 @@ const Tracker = () => {
             note: event.target.projectNote.value,
             time: event.target.projectTime.value,
         }
-        console.log(project);
-        setProjects([...projects, project]);
+        context.setProjects([...context.projects, project]);
     }
 
 
