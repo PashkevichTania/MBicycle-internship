@@ -9,7 +9,7 @@
     margin-bottom: 10px;
     font-weight: bold;
   }
-  .tracker-form{
+  .form{
     form{
       display: flex;
       flex-direction: column;
@@ -18,12 +18,12 @@
     }
   }
 
-  .form-section {
+  .section {
     display: flex;
     flex-direction: column;
   }
 
-  .tracker-submitBtn {
+  .submitBtn {
     margin-top: 20px;
     border: none;
     outline: none;

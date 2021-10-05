@@ -2,7 +2,7 @@ import React, {useContext} from 'react';
 import { IProject } from '../../Interfaces';
 import {ProjectsContext} from "../Context/projectsProvider";
 import ProjectElement from "./ProjectElement";
-import './project.scss'
+import styles from './project.module.scss'
 
 const ProjectsList = () => {
 
@@ -17,8 +17,8 @@ const ProjectsList = () => {
     );
 
     return (
-        <div className={"projectsListWrap"}>
-            <ul className={"projectsList"} >
+        <div className={styles.projectsListWrap}>
+            <ul className={styles.projectsList} >
                 {projectsList.length? projectsList: "No projects"}
             </ul>
         </div>

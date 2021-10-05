@@ -35,12 +35,12 @@
   display: flex;
   justify-content: center;
 
-  .projectDetails-span {
+  .span {
     font-weight: bold;
     margin-right: 5px;
   }
 
-  .projectDetails-box {
+  .box {
     display: grid;
     grid-template-areas: "id id"
     "user name"
@@ -48,24 +48,24 @@
     "note note";
   }
 
-  .projectDetails-id {
+  .ID {
     grid-area: id;
   }
 
-  .projectDetails-name {
+  .name {
     grid-area: name;
   }
 
-  .projectDetails-user {
+  .user {
     grid-area: user;
     margin-right: 20px;
   }
 
-  .projectDetails-time {
+  .time {
     grid-area: time;
   }
 
-  .projectDetails-note {
+  .note {
     grid-area: note;
   }
 }

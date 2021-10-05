@@ -1,13 +1,13 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
 import {APP_PATH} from "../../Constants";
-import './header.scss'
+import styles from './header.module.scss'
 
 const Header = () => {
     return (
-        <header className={"header"}>
+        <header className={styles.header}>
             <nav>
-                <ul className={"header_list"}>
+                <ul className={styles.list}>
                     <li>
                         <NavLink
                             exact

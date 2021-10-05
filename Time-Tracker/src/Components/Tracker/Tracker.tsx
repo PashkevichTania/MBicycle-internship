@@ -1,7 +1,7 @@
 import React, {useContext, useEffect, useState} from 'react';
 import {IProject, IUser} from "../../Interfaces";
 import {ProjectsContext} from "../Context/projectsProvider";
-import './tracker.scss'
+import styles from './tracker.module.scss'
 import {apiGetUsersArray} from "../Services/api";
 
 const Tracker = () => {
@@ -39,16 +39,16 @@ const Tracker = () => {
 
 
   return (
-    <div className={"tracker"}>
-      <div className={"tracker-form"}>
+    <div className={styles.tracker}>
+      <div className={styles.form}>
         <form onSubmit={formSubmitHandler}>
-          <div className={"usersDropDown"}>
+          <div>
             <label htmlFor="user">Choose a user:</label>
             <select name="user">
               {usersList}
             </select>
           </div>
-          <div className={"form-section"}>
+          <div className={styles.section}>
             <label htmlFor="projectName">Project name:</label>
             <input
               required
@@ -56,15 +56,15 @@ const Tracker = () => {
               type="text"
               placeholder={"Project name"}/>
           </div>
-          <div className={"form-section"}>
+          <div className={styles.section}>
             <label htmlFor="projectNote">Project note:</label>
             <textarea name="projectNote" placeholder={"Project note"}/>
           </div>
-          <div className={"form-section"}>
+          <div className={styles.section}>
             <label htmlFor="projectTime">Project time:</label>
             <input name="projectTime" type="number" placeholder={"Project time"}/>
           </div>
-          <button className={"tracker-submitBtn"} type={"submit"}>submit</button>
+          <button className={styles.submitBtn} type={"submit"}>submit</button>
         </form>
       </div>
     </div>

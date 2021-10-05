@@ -5,7 +5,7 @@ import {IProject} from "../../Interfaces";
 const ProjectElement = (props: {project: IProject}) => {
     const {project} = props;
     return (
-        <div className={"projectElement"}>
+        <div>
             <p>Project user: {project.user}</p>
             <p>Project name: {project.name}</p>
             <Link to={"/project/"+project.id} >Project details</Link>
