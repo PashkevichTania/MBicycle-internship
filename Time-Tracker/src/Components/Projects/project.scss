@@ -1,0 +1,71 @@
+.projectsListWrap {
+
+  display: flex;
+  justify-content: center;
+
+  .projectsList {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    li {
+      color: white;
+      background-color: #11115d;
+      width: 350px;
+      height: 150px;
+      padding: 10px;
+      margin: 20px;
+
+      a {
+        color: white;
+        font-weight: bold;
+
+        :visited {
+          color: white;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+.projectDetails {
+  background-color: bisque;
+  display: flex;
+  justify-content: center;
+
+  .projectDetails-span {
+    font-weight: bold;
+    margin-right: 5px;
+  }
+
+  .projectDetails-box {
+    display: grid;
+    grid-template-areas: "id id"
+    "user name"
+    "time time"
+    "note note";
+  }
+
+  .projectDetails-id {
+    grid-area: id;
+  }
+
+  .projectDetails-name {
+    grid-area: name;
+  }
+
+  .projectDetails-user {
+    grid-area: user;
+    margin-right: 20px;
+  }
+
+  .projectDetails-time {
+    grid-area: time;
+  }
+
+  .projectDetails-note {
+    grid-area: note;
+  }
+}
