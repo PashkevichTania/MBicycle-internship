@@ -1,0 +1,12 @@
+.header{
+  .header_list {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    a:visited{
+      color: black;
+    }
+  }
+}

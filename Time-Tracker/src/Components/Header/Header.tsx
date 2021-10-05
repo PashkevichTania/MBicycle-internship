@@ -1,14 +1,36 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import {APP_PATH} from "../../Constants";
+import './header.scss'
 
 const Header = () => {
     return (
         <header className={"header"}>
             <nav>
-                <ul>
-                    <li><NavLink to={APP_PATH.TRACKER} >Tracker</NavLink></li>
-                    <li><NavLink to={APP_PATH.LIST} >Notes</NavLink></li>
+                <ul className={"header_list"}>
+                    <li>
+                        <NavLink
+                            exact
+                            to={APP_PATH.TRACKER}
+                            activeStyle={{
+                                fontWeight: "bold",
+                                color: "black"
+                            }}
+                        >
+                            Tracker
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink
+                            to={APP_PATH.LIST}
+                            activeStyle={{
+                                fontWeight: "bold",
+                                color: "black"
+                            }}
+                        >
+                            Notes
+                        </NavLink>
+                    </li>
                 </ul>
             </nav>
         </header>
