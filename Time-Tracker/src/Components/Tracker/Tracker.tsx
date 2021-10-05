@@ -10,7 +10,7 @@ const Tracker = () => {
         const response = await axios.get(`${API_PATH.BASE}`);
         const usersArray:IUser[] = response.data;
         setUsers(usersArray);
-    };
+    }
 
 
     const [projects, setProjects] = useState<IProject[]>([]);
@@ -29,17 +29,47 @@ const Tracker = () => {
     function userChangeHandler(event: React.ChangeEvent<HTMLSelectElement>){
         setUser(event.target.value);
     }
+    function formSubmitHandler(event:any){
+        event.preventDefault();
+
+        const project:IProject = {
+            user: user,
+            name: event.target.projectName.value,
+            note: event.target.projectNote.value,
+            time: event.target.projectTime.value,
+        }
+        console.log(project);
+        setProjects([...projects, project]);
+    }
 
 
     return (
         <div className={"tracker"}>
             <div>
-                <label htmlFor="cars">Choose a user:</label>
-                <select name="user" onChange={userChangeHandler} value={user} >
+                <label htmlFor="users">Choose a user:</label>
+                <select name="users" onChange={userChangeHandler} value={user} >
                     {usersList}
                 </select>
             </div>
 
+            <div className={"tracker_form"}>
+                <form onSubmit={formSubmitHandler}>
+
+                    <div className={"form_section"}>
+                        <label htmlFor="projectName">Project name:</label>
+                        <input name="projectName" type="text" placeholder={"Project name"}/>
+                    </div>
+                    <div className={"form_section"}>
+                        <label htmlFor="projectNote">Project note:</label>
+                        <textarea name="projectNote"  placeholder={"Project note"}/>
+                    </div>
+                    <div className={"form_section"}>
+                        <label htmlFor="projectTime">Project time:</label>
+                        <input name="projectTime" type="number" placeholder={"Project time"}/>
+                    </div>
+                    <button type={"submit"}>submit</button>
+                </form>
+            </div>
         </div>
     );
 };

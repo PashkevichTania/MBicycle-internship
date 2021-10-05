@@ -1,5 +1,5 @@
 export interface IProject {
-    userName: string,
+    user: string,
     name: string,
     note: string,
     time: number,
