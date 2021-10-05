@@ -31,14 +31,20 @@ const Tracker = () => {
     function userChangeHandler(event: React.ChangeEvent<HTMLSelectElement>){
         setUser(event.target.value);
     }
-    function formSubmitHandler(event:any){
+    function formSubmitHandler(event: React.SyntheticEvent){
         event.preventDefault();
+
+        const target = event.target as typeof event.target & {
+            projectName: { value: string };
+            projectNote: { value: string };
+            projectTime: { value: number };
+        };
 
         const project:IProject = {
             user: user,
-            name: event.target.projectName.value,
-            note: event.target.projectNote.value,
-            time: event.target.projectTime.value,
+            name: target.projectName.value,
+            note: target.projectNote.value,
+            time: target.projectTime.value,
         }
         context.setProjects([...context.projects, project]);
     }
