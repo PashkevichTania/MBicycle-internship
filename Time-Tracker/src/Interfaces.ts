@@ -3,7 +3,7 @@ export interface IProject {
     user: string,
     name: string,
     note: string,
-    time: number,
+    time: string,
 };
 
 export interface IUser {

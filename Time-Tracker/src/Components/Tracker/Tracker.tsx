@@ -1,8 +1,9 @@
 import React, {useContext, useEffect, useState} from 'react';
 import {IProject, IUser} from "../../Interfaces";
 import {ProjectsContext} from "../Context/projectsProvider";
-import styles from './tracker.module.scss'
+import styles from './tracker.module.scss';
 import {apiGetUsersArray} from "../Services/api";
+import { v4 as uuidv4 } from 'uuid';
 
 const Tracker = () => {
 
@@ -24,11 +25,11 @@ const Tracker = () => {
       user: { value: string };
       projectName: { value: string };
       projectNote: { value: string };
-      projectTime: { value: number };
+      projectTime: { value: string };
     };
 
     const project: IProject = {
-      id: (target.projectName.value + Math.floor(Math.random() * 100)),
+      id: uuidv4(),
       user: target.user.value,
       name: target.projectName.value,
       note: target.projectNote.value,
@@ -62,7 +63,7 @@ const Tracker = () => {
           </div>
           <div className={styles.section}>
             <label htmlFor="projectTime">Project time:</label>
-            <input name="projectTime" type="number" placeholder={"Project time"}/>
+            <input name="projectTime" type="text" placeholder={"Project time"}/>
           </div>
           <button className={styles.submitBtn} type={"submit"}>submit</button>
         </form>
