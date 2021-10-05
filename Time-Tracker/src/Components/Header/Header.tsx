@@ -22,7 +22,7 @@ const Header = () => {
                     </li>
                     <li>
                         <NavLink
-                            to={APP_PATH.LIST}
+                            to={APP_PATH.PROJECTS_LIST}
                             activeStyle={{
                                 fontWeight: "bold",
                                 color: "black"

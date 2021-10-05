@@ -1,4 +1,5 @@
 export interface IProject {
+    id: string,
     user: string,
     name: string,
     note: string,

@@ -14,7 +14,7 @@ const Tracker = () => {
     }
 
 
-    const context = useContext(ProjectsContext);
+    const projectsContext = useContext(ProjectsContext);
 
     const [users, setUsers] = useState<IUser[]>();
     const [user, setUser] = useState('');
@@ -41,12 +41,13 @@ const Tracker = () => {
         };
 
         const project:IProject = {
+            id: (target.projectName.value +  Math.floor(Math.random() * 100)),
             user: user,
             name: target.projectName.value,
             note: target.projectNote.value,
             time: target.projectTime.value,
         }
-        context.setProjects([...context.projects, project]);
+        projectsContext.setProjects([...projectsContext.projects, project]);
     }
 
 

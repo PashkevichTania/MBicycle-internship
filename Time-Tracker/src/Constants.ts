@@ -1,7 +1,7 @@
 export const APP_PATH = {
     TRACKER: '/',
-    LIST: '/list/',
-    NOTE: '/note/:id',
+    PROJECTS_LIST: '/projectsList/',
+    PROJECT: '/project/:id',
 };
 
 export const API_PATH = {
