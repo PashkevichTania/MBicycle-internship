@@ -3,6 +3,7 @@ import axios from "axios";
 import {API_PATH} from "../../Constants";
 import {IProject, IUser} from "../../Interfaces";
 import {ProjectsContext} from "../Provider/projectsProvider";
+import './tracker.scss'
 
 const Tracker = () => {
 
@@ -13,11 +14,9 @@ const Tracker = () => {
         setUsers(usersArray);
     }
 
-
     const projectsContext = useContext(ProjectsContext);
 
     const [users, setUsers] = useState<IUser[]>();
-    const [user, setUser] = useState('');
 
     useEffect(()=>{
 
@@ -28,13 +27,11 @@ const Tracker = () => {
     const usersList = users?.map((user) => <option value={user.name} key={user.id}>{user.name}</option>);
 
 
-    function userChangeHandler(event: React.ChangeEvent<HTMLSelectElement>){
-        setUser(event.target.value);
-    }
     function formSubmitHandler(event: React.SyntheticEvent){
         event.preventDefault();
 
         const target = event.target as typeof event.target & {
+            user: { value: string };
             projectName: { value: string };
             projectNote: { value: string };
             projectTime: { value: number };
@@ -42,7 +39,7 @@ const Tracker = () => {
 
         const project:IProject = {
             id: (target.projectName.value +  Math.floor(Math.random() * 100)),
-            user: user,
+            user: target.user.value,
             name: target.projectName.value,
             note: target.projectNote.value,
             time: target.projectTime.value,
@@ -53,29 +50,31 @@ const Tracker = () => {
 
     return (
         <div className={"tracker"}>
-            <div>
-                <label htmlFor="users">Choose a user:</label>
-                <select name="users" onChange={userChangeHandler} value={user} >
-                    {usersList}
-                </select>
-            </div>
-
-            <div className={"tracker_form"}>
+            <div className={"tracker-form"}>
                 <form onSubmit={formSubmitHandler}>
-
-                    <div className={"form_section"}>
+                    <div className={"usersDropDown"}>
+                        <label htmlFor="user">Choose a user:</label>
+                        <select name="user" >
+                            {usersList}
+                        </select>
+                    </div>
+                    <div className={"form-section"}>
                         <label htmlFor="projectName">Project name:</label>
-                        <input name="projectName" type="text" placeholder={"Project name"}/>
+                        <input
+                            required
+                            name="projectName"
+                            type="text"
+                            placeholder={"Project name"} />
                     </div>
-                    <div className={"form_section"}>
+                    <div className={"form-section"}>
                         <label htmlFor="projectNote">Project note:</label>
-                        <textarea name="projectNote"  placeholder={"Project note"}/>
+                        <textarea name=  "projectNote"  placeholder={"Project note"}/>
                     </div>
-                    <div className={"form_section"}>
+                    <div className={"form-section"}>
                         <label htmlFor="projectTime">Project time:</label>
                         <input name="projectTime" type="number" placeholder={"Project time"}/>
                     </div>
-                    <button type={"submit"}>submit</button>
+                    <button className={"tracker-submitBtn"} type={"submit"}>submit</button>
                 </form>
             </div>
         </div>
