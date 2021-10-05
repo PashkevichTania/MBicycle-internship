@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import {ProjectsContext} from "../Provider/projectsProvider";
+import {ProjectsContext} from "../Context/projectsProvider";
 import {IProject} from "../../Interfaces";
 
 const ProjectDetails = () => {

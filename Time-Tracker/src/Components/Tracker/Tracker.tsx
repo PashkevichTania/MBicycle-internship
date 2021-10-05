@@ -1,31 +1,21 @@
 import React, {useContext, useEffect, useState} from 'react';
-import axios from "axios";
-import {API_PATH} from "../../Constants";
 import {IProject, IUser} from "../../Interfaces";
-import {ProjectsContext} from "../Provider/projectsProvider";
+import {ProjectsContext} from "../Context/projectsProvider";
 import './tracker.scss'
+import apiGet from "../Services/api";
 
 const Tracker = () => {
 
-
-    async function apiGet(){
-        const response = await axios.get(`${API_PATH.BASE}`);
-        const usersArray:IUser[] = response.data;
-        setUsers(usersArray);
-    }
-
     const projectsContext = useContext(ProjectsContext);
-
-    const [users, setUsers] = useState<IUser[]>();
+    const [users, setUsers] = useState<IUser[]>([]);
 
     useEffect(()=>{
-
-        apiGet();
-
+        const users = apiGet();
+       // setUsers(users);
     },[]);
 
-    const usersList = users?.map((user) => <option value={user.name} key={user.id}>{user.name}</option>);
 
+    const usersList = users.map((user) => <option value={user.name} key={user.id}>{user.name}</option>);
 
     function formSubmitHandler(event: React.SyntheticEvent){
         event.preventDefault();
