@@ -2,8 +2,10 @@ import React, {useContext, useEffect, useState} from 'react';
 import {IProject, IUser} from 'Interfaces';
 import {ProjectsContext} from 'Components/Context/projectsProvider';
 import styles from 'Components/Tracker/tracker.module.scss';
-import {apiGetUsersArray} from 'Components/Services/api';
+import {apiGetUsersArray} from 'Components/services/api';
 import { v4 as uuidv4 } from 'uuid';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Tracker = () => {
 
@@ -11,9 +13,21 @@ const Tracker = () => {
   const [users, setUsers] = useState<IUser[]>([]);
 
   useEffect(() => {
-    apiGetUsersArray().then((u) => setUsers(u));
+    apiGetUsersArray().then((u) => setUsers(u),(e)=>{
+      console.log("error!!!!!!", e)
+      notify();
+    });
   }, []);
 
+  const notify = () => toast.error('Connection error!', {
+    position: "top-right",
+    autoClose: false,
+    hideProgressBar: true,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+  });
 
   const usersList = users.map((user: IUser) => <option value={user.name}
                                                        key={user.id}>{user.name} </option>);
@@ -68,6 +82,15 @@ const Tracker = () => {
           <button className={styles.submitBtn} type={"submit"}>Create project</button>
         </form>
       </div>
+      <ToastContainer
+          position="top-right"
+          autoClose={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+      />
     </div>
   );
 };

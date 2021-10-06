@@ -7,8 +7,7 @@ export async function apiGetUsersArray():Promise<IUser[]>{
         const response = await axios.get(`${API_PATH.BASE}`);
         return response.data;
     }catch (e) {
-        console.log(e)
-        return [];
+        throw e;
     }
 
 }

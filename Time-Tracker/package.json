@@ -11,6 +11,7 @@
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "react-router-dom": "^5.3.0",
+    "react-toastify": "^8.0.3",
     "sass": "^1.42.1",
     "typescript-plugin-css-modules": "^3.4.0",
     "uuid": "^8.3.2"
