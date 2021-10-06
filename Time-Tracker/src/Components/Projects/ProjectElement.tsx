@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {IProject} from "../../Interfaces";
-import styles from "./project.module.scss"
+import {IProject} from 'Interfaces';
+import styles from 'Components/Projects/project.module.scss';
 
 const ProjectElement = (props: {project: IProject}) => {
     const {project} = props;

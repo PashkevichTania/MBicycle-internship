@@ -1,6 +1,6 @@
 import axios from "axios";
-import {API_PATH} from "../../Constants";
-import {IUser} from "../../Interfaces";
+import {API_PATH} from "Constants";
+import {IUser} from "Interfaces";
 
 export async function apiGetUsersArray():Promise<IUser[]>{
     try {

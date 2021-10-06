@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {IProject} from "../../Interfaces";
+import {IProject} from 'Interfaces';
 
 export const ProjectsContext = React.createContext<any>({});
 
@@ -7,6 +7,7 @@ const ProjectsProvider = (props: { children: boolean | React.ReactChild | React.
 
     const projectStorage = window.localStorage;
     const [projects, setProjects] = useState<IProject[]>([]);
+
     useEffect(()=>{
         if (projects.length){
             projectStorage.setItem('projects', JSON.stringify(projects))

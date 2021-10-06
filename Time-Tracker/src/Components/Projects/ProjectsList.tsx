@@ -1,8 +1,8 @@
 import React, {useContext} from 'react';
-import { IProject } from '../../Interfaces';
-import {ProjectsContext} from "../Context/projectsProvider";
-import ProjectElement from "./ProjectElement";
-import styles from './project.module.scss'
+import { IProject } from 'Interfaces';
+import {ProjectsContext} from 'Components/Context/projectsProvider';
+import ProjectElement from 'Components/Projects/ProjectElement';
+import styles from 'Components/Projects/project.module.scss'
 
 const ProjectsList = () => {
 

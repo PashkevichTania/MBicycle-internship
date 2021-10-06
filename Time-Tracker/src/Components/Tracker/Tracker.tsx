@@ -1,8 +1,8 @@
 import React, {useContext, useEffect, useState} from 'react';
-import {IProject, IUser} from "../../Interfaces";
-import {ProjectsContext} from "../Context/projectsProvider";
-import styles from './tracker.module.scss';
-import {apiGetUsersArray} from "../Services/api";
+import {IProject, IUser} from 'Interfaces';
+import {ProjectsContext} from 'Components/Context/projectsProvider';
+import styles from 'Components/Tracker/tracker.module.scss';
+import {apiGetUsersArray} from 'Components/Services/api';
 import { v4 as uuidv4 } from 'uuid';
 
 const Tracker = () => {

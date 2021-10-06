@@ -1,7 +1,7 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
-import {APP_PATH} from "../../Constants";
-import styles from './header.module.scss'
+import {APP_PATH} from 'Constants';
+import styles from 'Components/Header/header.module.scss'
 
 const Header = () => {
     return (
