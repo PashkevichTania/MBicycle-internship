@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
-import {ProjectsContext} from 'Components/Context/projectsProvider';
+import {ProjectsContext} from 'components/Context/projectsProvider';
 import {IProject} from 'Interfaces';
-import styles from 'Components/Projects/project.module.scss'
+import styles from 'components/Projects/Project.module.scss'
 
 const ProjectDetails = () => {
 
@@ -44,6 +44,7 @@ const ProjectDetails = () => {
                         </span>
                         {project.note}
                     </p>
+                    <button className={styles.editBtn}>Edit</button>
                 </div>
             ): 'project not found'}
         </div>

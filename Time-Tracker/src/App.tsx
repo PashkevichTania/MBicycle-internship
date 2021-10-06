@@ -1,10 +1,10 @@
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import {APP_PATH} from "Constants";
-import Tracker from "Components/Tracker/Tracker";
-import ProjectsList from "Components/Projects/ProjectsList";
-import Header from "Components/Header/Header";
-import ProjectsProvider from "Components/Context/projectsProvider";
-import ProjectDetails from "Components/Projects/ProjectDetails";
+import Tracker from "components/Tracker/Tracker";
+import ProjectsList from "components/Projects/ProjectsList";
+import Header from "components/Header/Header";
+import ProjectsProvider from "components/Context/projectsProvider";
+import ProjectDetails from "components/Projects/ProjectDetails";
 
 function App() {
     return (

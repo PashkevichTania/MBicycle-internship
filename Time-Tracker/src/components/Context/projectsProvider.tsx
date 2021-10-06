@@ -15,9 +15,7 @@ const ProjectsProvider = (props: { children: boolean | React.ReactChild | React.
     },[projects])
     useEffect(()=>{
         let projectsFromStorage = projectStorage.getItem('projects')
-        console.log("projectsFromStorage",  projectsFromStorage)
         if (projectsFromStorage){
-            console.log("parse: ", JSON.parse(projectsFromStorage))
             if (projectsFromStorage.length){
                 setProjects(JSON.parse(projectsFromStorage))
             }
