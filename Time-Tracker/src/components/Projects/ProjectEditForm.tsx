@@ -38,11 +38,9 @@ const ProjectEditForm = (props: { projectID: string, setShow: React.Dispatch<str
         const updatedProjects = projectsContext.projects.map((p: IProject)=> {
             return (p.id === newProject.id) ? newProject : p;
         })
-        console.log(updatedProjects);
         projectsContext.setProjects(updatedProjects);
         closeHandler();
     }
-    console.log("styles", styles)
 
     return (
         <div className={styles.form}>

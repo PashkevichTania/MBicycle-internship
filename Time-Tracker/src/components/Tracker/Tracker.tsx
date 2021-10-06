@@ -14,7 +14,7 @@ const Tracker = () => {
 
   useEffect(() => {
     apiGetUsersArray().then((u) => setUsers(u),(e)=>{
-      console.log("error!!!!!!", e)
+      console.log("api error!!!", e)
       notify();
     });
   }, []);
