@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
 import { IProject } from 'Interfaces';
-import {ProjectsContext} from 'components/Context/projectsProvider';
+import {ProjectsContext} from 'Context/projectsProvider';
 import ProjectElement from 'components/Projects/ProjectElement';
 import styles from 'components/Projects/Project.module.scss'
 

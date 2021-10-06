@@ -3,7 +3,7 @@ import {APP_PATH} from "Constants";
 import Tracker from "components/Tracker/Tracker";
 import ProjectsList from "components/Projects/ProjectsList";
 import Header from "components/Header/Header";
-import ProjectsProvider from "components/Context/projectsProvider";
+import ProjectsProvider from "Context/projectsProvider";
 import ProjectDetails from "components/Projects/ProjectDetails";
 
 function App() {

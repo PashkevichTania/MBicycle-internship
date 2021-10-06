@@ -1,5 +1,5 @@
 import React, {useContext, useState} from 'react';
-import {ProjectsContext} from 'components/Context/projectsProvider';
+import {ProjectsContext} from 'Context/projectsProvider';
 import {IProject} from 'Interfaces';
 import ProjectEditForm from 'components/Projects/ProjectEditForm';
 import styles from 'components/Projects/Project.module.scss'

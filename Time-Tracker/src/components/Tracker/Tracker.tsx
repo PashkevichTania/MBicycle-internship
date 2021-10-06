@@ -1,8 +1,8 @@
 import React, {useContext, useEffect, useState} from 'react';
 import {IProject, IUser} from 'Interfaces';
-import {ProjectsContext} from 'components/Context/projectsProvider';
+import {ProjectsContext} from 'Context/projectsProvider';
 import styles from 'components/Tracker/tracker.module.scss';
-import {apiGetUsersArray} from 'components/services/api';
+import {apiGetUsersArray} from 'services/api';
 import { v4 as uuidv4 } from 'uuid';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
