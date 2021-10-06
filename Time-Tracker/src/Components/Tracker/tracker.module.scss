@@ -6,32 +6,64 @@
 
   label {
     margin-right: 10px;
-    margin-bottom: 10px;
+    margin-top: 10px;
     font-weight: bold;
+
   }
   .form{
     form{
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
+
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      padding: 20px;
+
+      input[type=text], select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+
+      textarea {
+        width: 100%;
+        height: 150px;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        background-color: #f8f8f8;
+        resize: none;
+      }
     }
   }
 
   .section {
     display: flex;
     flex-direction: column;
+    width: 100%;
   }
 
   .submitBtn {
-    margin-top: 20px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
     border: none;
-    outline: none;
-    background-color: aquamarine;
-    color: black;
-    text-align: center;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    &:hover {
+      background-color: #45a049;
+    }
     &:active{
-      background-color: #468c78;
+      background-color: #27532a;
     }
   }
 }

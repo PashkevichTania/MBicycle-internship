@@ -14,7 +14,7 @@ const Header = () => {
                             to={APP_PATH.TRACKER}
                             activeStyle={{
                                 fontWeight: "bold",
-                                color: "black"
+                                textDecoration: "underline",
                             }}
                         >
                             Tracker
@@ -25,7 +25,7 @@ const Header = () => {
                             to={APP_PATH.PROJECTS_LIST}
                             activeStyle={{
                                 fontWeight: "bold",
-                                color: "black"
+                                textDecoration: "underline",
                             }}
                         >
                             Notes

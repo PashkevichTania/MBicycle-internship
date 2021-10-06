@@ -7,8 +7,6 @@ import ProjectsProvider from "./Components/Context/projectsProvider";
 import ProjectDetails from "./Components/Projects/ProjectDetails";
 
 function App() {
-
-
     return (
         <ProjectsProvider>
             <Router>

@@ -11,34 +11,48 @@
 
     li {
       color: white;
-      background-color: #11115d;
+      background-color: #1f2124;
+      border-radius: 5px;
       width: 350px;
-      height: 150px;
       padding: 10px;
       margin: 20px;
-
-      a {
-        color: white;
-        font-weight: bold;
-
-        :visited {
-          color: white;
-          font-weight: bold;
-        }
-      }
     }
   }
 }
 
+.linkWrap {
+  margin: 15px 0 10px 0;
+  width: 100%;
+  text-align: end;
+  a{
+    color: #f6b352;
+    font-weight: bold;
+    &:hover{
+      color: #936f33;
+    }
+    &:visited {
+      color: #f6b352;
+      font-weight: bold;
+    }
+  }
+}
+
+.span {
+  font-weight: 500;
+  color: #f6b352;
+  margin-right: 5px;
+}
+
 .projectDetails {
-  background-color: bisque;
+  width: 500px;
+  background-color: #1f2124;
+  color: white;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
   display: flex;
   justify-content: center;
 
-  .span {
-    font-weight: bold;
-    margin-right: 5px;
-  }
 
   .box {
     display: grid;
@@ -46,6 +60,10 @@
     "user name"
     "time time"
     "note note";
+
+    p{
+      padding: 10px;
+    }
   }
 
   .ID {

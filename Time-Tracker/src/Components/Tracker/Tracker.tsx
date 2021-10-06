@@ -65,7 +65,7 @@ const Tracker = () => {
             <label htmlFor="projectTime">Project time:</label>
             <input name="projectTime" type="text" placeholder={"Project time"}/>
           </div>
-          <button className={styles.submitBtn} type={"submit"}>submit</button>
+          <button className={styles.submitBtn} type={"submit"}>Create project</button>
         </form>
       </div>
     </div>
